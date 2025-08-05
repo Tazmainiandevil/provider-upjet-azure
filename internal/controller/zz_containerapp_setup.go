@@ -16,6 +16,7 @@ import (
 	environmentcustomdomain "github.com/upbound/provider-azure/internal/controller/containerapp/environmentcustomdomain"
 	environmentdaprcomponent "github.com/upbound/provider-azure/internal/controller/containerapp/environmentdaprcomponent"
 	environmentstorage "github.com/upbound/provider-azure/internal/controller/containerapp/environmentstorage"
+	job "github.com/upbound/provider-azure/internal/controller/containerapp/job"
 )
 
 // Setup_containerapp creates all controllers with the supplied logger and adds them to
@@ -29,6 +30,7 @@ func Setup_containerapp(mgr ctrl.Manager, o controller.Options) error {
 		environmentcustomdomain.Setup,
 		environmentdaprcomponent.Setup,
 		environmentstorage.Setup,
+		job.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

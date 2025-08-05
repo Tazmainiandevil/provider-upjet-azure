@@ -179,6 +179,7 @@ import (
 	environmentcustomdomain "github.com/upbound/provider-azure/internal/controller/containerapp/environmentcustomdomain"
 	environmentdaprcomponent "github.com/upbound/provider-azure/internal/controller/containerapp/environmentdaprcomponent"
 	environmentstorage "github.com/upbound/provider-azure/internal/controller/containerapp/environmentstorage"
+	job "github.com/upbound/provider-azure/internal/controller/containerapp/job"
 	agentpool "github.com/upbound/provider-azure/internal/controller/containerregistry/agentpool"
 	containerconnectedregistry "github.com/upbound/provider-azure/internal/controller/containerregistry/containerconnectedregistry"
 	registry "github.com/upbound/provider-azure/internal/controller/containerregistry/registry"
@@ -663,7 +664,7 @@ import (
 	storagesync "github.com/upbound/provider-azure/internal/controller/storagesync/storagesync"
 	clusterstreamanalytics "github.com/upbound/provider-azure/internal/controller/streamanalytics/cluster"
 	functionjavascriptuda "github.com/upbound/provider-azure/internal/controller/streamanalytics/functionjavascriptuda"
-	job "github.com/upbound/provider-azure/internal/controller/streamanalytics/job"
+	jobstreamanalytics "github.com/upbound/provider-azure/internal/controller/streamanalytics/job"
 	managedprivateendpointstreamanalytics "github.com/upbound/provider-azure/internal/controller/streamanalytics/managedprivateendpoint"
 	outputblob "github.com/upbound/provider-azure/internal/controller/streamanalytics/outputblob"
 	outputeventhub "github.com/upbound/provider-azure/internal/controller/streamanalytics/outputeventhub"
@@ -896,6 +897,7 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		environmentcustomdomain.Setup,
 		environmentdaprcomponent.Setup,
 		environmentstorage.Setup,
+		job.Setup,
 		agentpool.Setup,
 		containerconnectedregistry.Setup,
 		registry.Setup,
@@ -1380,7 +1382,7 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		storagesync.Setup,
 		clusterstreamanalytics.Setup,
 		functionjavascriptuda.Setup,
-		job.Setup,
+		jobstreamanalytics.Setup,
 		managedprivateendpointstreamanalytics.Setup,
 		outputblob.Setup,
 		outputeventhub.Setup,

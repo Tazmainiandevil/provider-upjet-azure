@@ -23,3 +23,6 @@ func (tr *EnvironmentDaprComponent) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *EnvironmentStorage) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *Job) Hub() {}
